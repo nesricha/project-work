@@ -14,7 +14,7 @@ export default function CategoryComponent() {
     }, [])
 
 
-    return <div>
+    return <div className={`${styles.categorySection}`}>
 
     <h2> CATEGORIES </h2>
 
