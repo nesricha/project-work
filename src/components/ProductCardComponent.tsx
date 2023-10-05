@@ -9,28 +9,37 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
-    return <a href={`/product/${prop.product.id}`} className={`${styles.productCard}`}>
+    return  <a href={`/product/${prop.product.id}`} className={`${styles.productCard}`}>
+        {/* <a href={`/product/${prop.product.id}`} className="mx-3 mt-6 flex flex-col rounded-lg bg-white sm:shrink-0 sm:grow sm:basis-0">  */}
+    
 
 
         <div className={`${styles.cardImage}`}>
 
-            <img src={prop.product.images[0]} alt={prop.product.title} />
+            <img className="mx-auto scale-110 max-h-44 object-cover" src={prop.product.images[0]} alt={prop.product.title} />
 
         </div>
 
         <div className={`${styles.cardInfo}`}>
+        {/* <div className="p-6"> */}
+        
+
             <div>
-                <strong>{prop.product.title}</strong>
+
+                <h5>{prop.product.title}</h5>
                 <p>{prop.product.brand}</p>
                 <span className={`${styles.oldPrice}`}>  {`${oldPrice}$`}</span>
                 <span>{` - ${prop.product.discountPercentage}% OFF`}</span>
                 <p><strong> {prop.product.price}$ </strong></p>
                 <p>{prop.product.rating} /5</p>
+
             </div>
 
             <div className={`${styles.cardCTA}`}>
+
                 <a href="#">Add to favorites</a>
                 <a href="#">Add to cart</a>
+
             </div>
 
         </div>
