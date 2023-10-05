@@ -13,7 +13,7 @@ export default function CategoryListComponent(props: Prop) {
 
     {/* <ul className={`${styles.productsList}`}> */}
 
-    <ul className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
+    <ul className="grid justify-items-center sm:justify-items-stretch grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
 
         {props.products.map(product => <li key={product.id}> <ProductCardComponent product={product}/> </li>)}
 
