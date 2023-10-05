@@ -34,6 +34,16 @@ body:has(.mainContainer) {
     padding: 15px;
 }
 
+.navBar a:has(img) {
+    border-radius: 100%;
+    width: 50px;
+    overflow: hidden;
+}
+
+.navBar img {
+    scale: 1.3;
+}
+
 .navBar ul {
     display: flex;
     list-style-type: none;

@@ -12,7 +12,9 @@ export default function NavBarComponent() {
     }, [])
 
     return <div className={`${styles.navBar}`}>
-        <h1><a href="/">Navbar</a></h1>
+        <a href="/"> 
+        <img src="/shopping-bag-logo.jpg" alt="shopping bag logo" />
+        </a>
 
         <ul>
             <li><a href="#" target="_blank">Favorites</a></li>
