@@ -21,8 +21,9 @@ export default function ProductListComponent() {
 
     <h2>All products</h2>
 
-    <ul className={`${styles.productsList}`}>
-        {products?.map(product => <li key={product.id}>
+    {/* <ul className={`${styles.productsList}`}> */}
+        <ul className="grid grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
+            {products?.map(product => <li key={product.id}>
                 <ProductCardComponent product={product} />
         </li>)}
     </ul>
