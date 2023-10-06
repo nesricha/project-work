@@ -14,15 +14,18 @@ export default function CategoryComponent() {
     }, [])
 
 
-    return <div className="text-center bg-gradient-to-t from-[#ceba9b] p-5">
+    return <div className="text-center shadow-md bg-gradient-to-b from-[#ceba9b] p-10">
 
-    {/* <h2> CATEGORIES </h2> */}
-<h1 className="font-medium text-4xl md:text-6xl py-3 md:py-5 font-serif">CATEGORIES
-         </h1>
-    <ul className={`${styles.categories}`}>
+<h1 className="font-semibold text-amber-50 text-3xl md:text-4xl py-3 md:py-5">CATEGORIES</h1>
+
+    <ul className="grid mx-auto px-10 py-6 justify-items-center gap-4 grid-cols-1 xl-grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         
-        <li> <a href="/">All products</a></li>
-        {categories?.map(category => <li key={category}> <a href={`/category/${category}`}> {category.replace("-", " ").toUpperCase() } </a> </li>)}
+        <li> <a href="/" className="text-xl hover:text-amber-50 underline hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-[#e8e2d4]">All products</a></li>
+        {categories?.map(category => <li key={category}> 
+        <a href={`/category/${category}`} className="text-xl hover:text-amber-50 hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-[#e8e2d4]"> 
+        {category.replace("-", " ").toUpperCase() } 
+        </a> 
+        </li>)}
         
     </ul>
 

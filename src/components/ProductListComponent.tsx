@@ -17,15 +17,15 @@ export default function ProductListComponent() {
 
 
 
-    return <>
+    return <div className="shadow-md">
 
-    <h2>All products</h2>
+    <h2 className="font-semibold text-3xl md:text-4xl p-8"> All products</h2>
 
     {/* <ul className={`${styles.productsList}`}> */}
-        <ul className="grid max-w-7xl mx-auto px-10 justify-items-center gap-4 sm:justify-items-stretch grid-cols-1 xl-grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
+        <ul className="grid max-w-7xl mx-auto px-10 justify-items-center gap-4 sm:justify-items-stretch grid-cols-1 xl-grid-cols-4 lg:grid-cols-3 sm:grid-cols-2">
             {products?.map(product => <li key={product.id}>
                 <ProductCardComponent product={product} />
         </li>)}
     </ul>
-    </>
+    </div>
 }

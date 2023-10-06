@@ -89,13 +89,13 @@ body:has(.mainContainer) {
     text-decoration: none;
 }
 
-.categories li {
+/* .categories li {
     padding: 1em 2.5em;
 }
 
 .categories a:hover {
     text-decoration: underline;
-}
+} */
 
 
 /* products list */
