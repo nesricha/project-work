@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className={`${styles.mainContainer}`}>
 
-    <div className={`${styles.homeHead}`}>
+    <div className="bg-[url('/lines.jpg')] bg-cover">
 
     <NavBarComponent />
     <HeaderComponent />
