@@ -48,31 +48,30 @@ body:has(.mainContainer) {
 } */
 
 /* flex list-none */
-.navBar ul { 
+/* .navBar ul { 
     display: flex;
     list-style-type: none;
-}
+} */
 
-.navBar li { /* my-0 mx-4 */ 
+/* my-0 mx-4 */ 
+/* .navBar li { 
     margin: 0 15px;
-}
+} */
 
 
 
 
 /* header  */
 
-.header {
+/* flex flex-col justify-center items-center h-1/3 min-h-fit px-2 py-3 */
+/* .header { 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 31vw;
     min-height: 250px;
-    /* padding: 0 5% 0 40%;
-    text-align: right;
-    color: aliceblue; */
-}
+} */
 
 /* categories */
 
