@@ -5,12 +5,6 @@ import { useEffect } from "react"
 
 export default function NavBarComponent() {
 
-    useEffect(() => {
-        axios.get(`https://dummyjson.com/products/categories`)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-    }, [])
-
     return <div className="flex justify-between items-center p-4">
         <a href="/" className="rounded-full w-14 overflow-hidden grow-0"> 
         <img src="/shopping-bag-logo.jpg" alt="shopping bag logo" className="scale-125"/>
