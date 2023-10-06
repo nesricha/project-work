@@ -18,8 +18,8 @@ export default function NavBarComponent() {
             </ul>
 
             <ul className="hidden md:flex items-center">
-            <li><input type="text" placeholder="Don't search..." className="rounded-md outline-double outline-yellow-800 focus-visible:outline-amber-200 p-1"/></li>
-            <li className="px-2.5"><a href="#" className="py-1 px-6 font-semibold bg-gradient-to-t from-yellow-600 to-amber-600 text-amber-50 rounded-md hover:text-amber-900">Search</a></li>
+            <li><input type="text" placeholder="Don't search..." className="rounded-md outline outline-[#5c4f3a] focus-visible:outline-double p-1"/></li>
+            <li className="px-2.5"><a href="#" className="py-1 px-6 border border-2 border-[#5c4f3a] rounded-md hover:bg-gradient-to-t hover:from-[#5c4f3a] hover:border-white hover:text-white">Search</a></li>
             </ul>
 
 {/* small screen */}

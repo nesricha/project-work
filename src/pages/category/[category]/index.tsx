@@ -31,13 +31,13 @@ export default function CategoryPage() {
 
     <CategoryComponent />
 
-    {products !== undefined ? <> 
+    {products !== undefined ?  <div className="shadow-md">
 
-    <h2>{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
-
+    <h2 className="font-semibold text-3xl md:text-4xl p-8">{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
+    
      <CategoryListComponent products={products} />
 
-     </>  : <p>No products available for this category</p>}
+     </div>  : <p>No products available for this category</p>}
     
     <ContactFormComponent />
 
