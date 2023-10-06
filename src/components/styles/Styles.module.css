@@ -75,10 +75,10 @@ body:has(.mainContainer) {
 
 /* categories */
 
-.categorySection {
+/* .categorySection {
     background-color: #ceba9b;
     text-align: center;
-}
+} */
 
 .categories {
     display: flex;

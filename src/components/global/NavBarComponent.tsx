@@ -18,14 +18,14 @@ export default function NavBarComponent() {
 
 
             <ul className="flex grow justify-evenly max-w-sm mx-auto translate-x-1/4">
-            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-white" href="#" target="_blank">Favorites</a></li>
-            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-white" href="#" target="_blank">Cart</a></li>
-            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-white" href="#" target="_blank">Contact Us</a></li>
+            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-gradient-to-b hover:from-amber-50" href="#" target="_blank">Favorites</a></li>
+            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-gradient-to-b hover:from-amber-50" href="#" target="_blank">Cart</a></li>
+            <li><a className="hover:shadow-xl p-2 hover:rounded-md hover:bg-gradient-to-b hover:from-amber-50" href="#" target="_blank">Contact Us</a></li>
             </ul>
 
             <ul className="flex items-center">
             <li><input type="text" placeholder="Don't search..." className="rounded-md focus-visible:outline-double focus-visible:outline-amber-50 p-1"/></li>
-            <li className="px-2.5"><a href="#" className="py-1 px-6 bg-yellow-700 text-yellow-50 rounded-md hover:bg-yellow-50 hover:text-yellow-700">Cerca</a></li>
+            <li className="px-2.5"><a href="#" className="py-1 px-6 font-semibold bg-yellow-700 text-amber-50 rounded-md hover:bg-orange-100 hover:text-amber-900">Cerca</a></li>
             </ul>
     </div>
 }
