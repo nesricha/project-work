@@ -3,9 +3,9 @@ import styles from "../styles/Styles.module.css"
 
 
 export default function ContactFormComponent() {
-    return <div className="text-center bg-gradient-to-t from-[#ceba9b] p-10">
+    return <div className="text-center bg-gradient-to-b from-[#f1e2ca] p-10">
 
-        <h2 className="font-semibold text-amber-50 text-3xl md:text-4xl py-3 md:py-5">Contact Us</h2>
+        <h2 className="font-bold text-[#fffdf4] text-3xl md:text-4xl py-3 md:py-5">CONTACT US</h2>
 
         <form className={`${styles.form}`}>
             
