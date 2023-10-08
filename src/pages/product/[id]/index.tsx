@@ -7,6 +7,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import styles from "../../../components/styles/Styles.module.css"
 import FooterComponent from "@/components/global/FooterComponent"
+import ContactFormComponent from "@/components/global/ContactFormComponent"
 
 export default function ProductPage() {
 
@@ -24,11 +25,13 @@ export default function ProductPage() {
 
     
 
-    return <div className={`${styles.mainContainer}`}>
+    return <div className="text-dark-2 bg-light-1">
 
     <NavBarComponent />
 
     {product !== undefined ? <ProductInfoComponent product={product} /> : <p>Product not found</p>}
+
+    <ContactFormComponent />
 
     <FooterComponent />
 

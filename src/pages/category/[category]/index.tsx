@@ -25,19 +25,19 @@ export default function CategoryPage() {
 
     
 
-    return <div className={`${styles.mainContainer}`}>
+    return <div className="text-dark-2 bg-light-1">
 
     <NavBarComponent />
 
     <CategoryComponent />
 
-    {products !== undefined ?  <div className="shadow-md">
+    {products !== undefined && products.length ?  <div className="shadow-md">
 
-    <h2 className="font-semibold text-3xl md:text-4xl p-8">{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
+    <h2 className="font-semibold text-3xl md:text-4xl p-10">{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
     
      <CategoryListComponent products={products} />
 
-     </div>  : <p>No products available for this category</p>}
+     </div>  : <p className="text-3xl text-center font-bold p-8">{`No products available for the category "${productsCategory?.toLowerCase()}"`}</p>}
     
     <ContactFormComponent />
 

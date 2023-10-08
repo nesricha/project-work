@@ -3,7 +3,7 @@ import styles from "../styles/Styles.module.css"
 
 
 export default function ContactFormComponent() {
-    return <div id="contact" className="bg-gradient-to-b from-dark-1 p-10">
+    return <div id="contact" className="bg-gradient-to-b from-dark-1 to-light-1 py-24 px-10 shadow-md">
 
         <h2 className="text-center font-bold text-light-1 text-3xl md:text-4xl py-3 md:py-5">CONTACT US</h2>
 
@@ -64,7 +64,7 @@ export default function ContactFormComponent() {
 
 
 
-        <button className="w-11/12 mx-5 my-6 p-2.5 bg-light-1 rounded-md hover:bg-dark-1" type="submit">Submit</button>
+        <button className="w-11/12 mx-5 my-6 p-2.5 bg-light-2 rounded-md hover:bg-dark-1" type="submit">Submit</button>
         
         </form>
 
