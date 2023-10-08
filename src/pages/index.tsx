@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="text-dark-2 bg-light-3">
 
-    <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[75vh]">
+    <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
 
     <NavBarComponent />
     <HeaderComponent />
