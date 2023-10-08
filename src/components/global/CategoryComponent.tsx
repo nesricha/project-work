@@ -18,7 +18,7 @@ export default function CategoryComponent() {
 
 <h1 className="font-bold text-light-1 text-4xl md:text-5xl py-3 md:py-5">CATEGORIES</h1>
 
-    <ul className="grid mx-auto px-10 py-6 justify-items-center gap-4 grid-cols-1 xl-grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+    <ul className="grid mx-auto px-10 py-6 justify-items-center gap-4 grid-cols-1 xl-grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 whitespace-nowrap">
         
         <li> <a href="/" className="text-xl hover:text-dark-1 underline hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1">Today's deals</a></li>
         {categories?.map(category => <li key={category}> 
