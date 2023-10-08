@@ -20,9 +20,9 @@ export default function CategoryComponent() {
 
     <ul className="grid mx-auto px-10 py-6 justify-items-center gap-4 grid-cols-1 xl-grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         
-        <li> <a href="/" className="text-xl hover:text-light-1 underline hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-2">Today's deals</a></li>
+        <li> <a href="/" className="text-xl hover:text-dark-1 underline hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1">Today's deals</a></li>
         {categories?.map(category => <li key={category}> 
-        <a href={`/category/${category}`} className="text-xl hover:text-light-1 hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-2"> 
+        <a href={`/category/${category}`} className="text-xl hover:text-dark-1 hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1"> 
         {category.replace("-", " ").toUpperCase() } 
         </a> 
         </li>)}

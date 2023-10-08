@@ -12,14 +12,14 @@ export default function NavBarComponent() {
 
 {/* big screen */}
             <ul className=" hidden md:flex grow justify-evenly max-w-sm mx-auto lg:translate-x-1/4">
-            <li><a className="text-xl font-semibold hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-b hover:from-white" href="#" >Favorites</a></li>
-            <li><a className="text-xl font-semibold hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-b hover:from-white" href="#" >Cart</a></li>
-            <li><a className="text-xl font-semibold hover:shadow-xl py-2 px-3 hover:rounded-md hover:bg-gradient-to-b hover:from-white" href="#contact" >Contact Us</a></li>
+            <li><a className="text-xl font-semibold py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1" href="#" >Favorites</a></li>
+            <li><a className="text-xl font-semibold py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1" href="#" >Cart</a></li>
+            <li><a className="text-xl font-semibold py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1" href="#contact" >Contact Us</a></li>
             </ul>
 
             <ul className="hidden md:flex items-center">
-            <li><input type="text" placeholder="Don't search..." className="rounded-md outline-[#5c4f3a] focus-visible:outline-double p-1"/></li>
-            <li className="px-2.5"><a href="#" className="py-1 px-6 border border-dark-2 hover:bg-light-1 hover:border-light-2 rounded-md font-semibold">Search</a></li>
+            <li><input type="text" placeholder="Don't search..." className="rounded-md outline-light-2 focus-visible:outline-double px-1 py-1.5"/></li>
+            <li className="px-2.5"><a href="#" className="py-1.5 px-8 border border-dark-2 hover:bg-light-1 hover:border-light-2 rounded-md font-semibold">Search</a></li>
             </ul>
             
 
