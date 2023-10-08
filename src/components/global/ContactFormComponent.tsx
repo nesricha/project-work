@@ -13,7 +13,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="name">Name: </label>
-        <input className="w-full p-2 rounded-md" type="text" id="name"  placeholder=" Enter your name" required/>
+        <input className="w-full p-2 rounded-md focus-visible:outline-light-2 focus-visible:outline-light-2" type="text" id="name"  placeholder=" Enter your name" required/>
             
             </div>
 
@@ -21,7 +21,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="lastName">Last name: </label>        
-        <input className="w-full p-2 rounded-md" type="text" id="lastName" placeholder=" Enter your last name" required />
+        <input className="w-full p-2 rounded-md focus-visible:outline-light-2" type="text" id="lastName" placeholder=" Enter your last name" required />
             
             </div>
 
@@ -29,7 +29,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="email">Email: </label>
-        <input className="w-full p-2 rounded-md" type="email" id="email" placeholder=" Enter your email" required />
+        <input className="w-full p-2 rounded-md focus-visible:outline-light-2" type="email" id="email" placeholder=" Enter your email" required />
             
             </div>
 
@@ -37,7 +37,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="date">Date of birth: </label>
-        <input className="w-full p-2 rounded-md" type="date" id="date" />
+        <input className="w-full p-2 rounded-md focus-visible:outline-light-2" type="date" id="date" />
             
             </div>
 
@@ -45,7 +45,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="education">Educational level: </label>
-        <select className="w-full p-2 rounded-md" id="education">
+        <select className="w-full p-2 rounded-md focus-visible:outline-light-2" id="education">
             <option value="select"> Select an option </option>
             <option value="elementary"> Elementary School </option>
             <option value="middle"> Middle School </option>
@@ -58,7 +58,7 @@ export default function ContactFormComponent() {
         <div className="w-11/12 mx-auto pb-3">
 
         <label className="block p-1" htmlFor="message">Message: </label>
-        <textarea className="w-full p-2 rounded-md" id="message" cols={30} rows={5} placeholder=" Write a message (optional)" />
+        <textarea className="w-full p-2 rounded-md focus-visible:outline-light-2" id="message" cols={30} rows={5} placeholder=" Write a message (optional)" />
             
             </div>
 

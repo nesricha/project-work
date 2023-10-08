@@ -9,12 +9,12 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
-    return  <a href={`/product/${prop.product.id}`} className={`${styles.productCard} flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105`}>
+    return  <a href={`/product/${prop.product.id}`} className={`${styles.productCard} flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]`}>
 
 
         <div className={`${styles.cardImage} h-3/6 overflow-hidden`}>
 
-            <img className="mx-auto scale-125 max-h-44 object-cover" src={prop.product.images[0]} alt={prop.product.title} />
+            <img className="mx-auto scale-125 max-h-44 object-contain" src={prop.product.thumbnail} alt={prop.product.title} />
 
         </div>
 

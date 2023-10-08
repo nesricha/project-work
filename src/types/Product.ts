@@ -5,5 +5,5 @@ export type Product = {
     discountPercentage :number,
     rating: number,
     brand: string,
-    images: string[]
+    thumbnail: string
 }
