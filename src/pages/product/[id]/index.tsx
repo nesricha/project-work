@@ -26,7 +26,7 @@ export default function ProductPage() {
 
     
 
-    return <div className="text-dark-2 bg-light-1">
+    return <div className="text-dark-2 bg-light-1 font-roboto">
 
     <NavBarComponent />
 

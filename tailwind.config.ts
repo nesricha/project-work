@@ -17,12 +17,15 @@ const config: Config = {
       },
       colors: {
         'dark-1': '#e3cfb4',
-        'dark-2': '#5c4f3a',
+        'dark-2': '#685f50',
         'light-1': '#fffdf4',
         'light-2': '#ece5d6',
         'light-3': '#ebe6da',
         'light-4': '#ceba9b',
-      }
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif']
+      },
     },
   },
   plugins: [

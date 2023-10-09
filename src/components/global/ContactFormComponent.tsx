@@ -34,6 +34,7 @@ export default function ContactFormComponent() {
             className="max-w-md mx-auto"
             onSubmit={event => {
                 event.preventDefault()
+                event.currentTarget.reset()
             }}>
 
 
@@ -117,7 +118,7 @@ export default function ContactFormComponent() {
             </div>
 
 
-            {!filledRequired && <p className="pt-4 w-11/12 mx-auto">Please fill out all mandatory fields (*).</p> }
+            {!filledRequired && <p className="pt-4 w-11/12 mx-auto">Please fill out all mandatory fields (*).</p>}
             <button
                 className="w-11/12 mx-5 my-6 p-2.5 bg-light-2 rounded-md hover:bg-dark-1 disabled:bg-light-3"
                 type="submit"

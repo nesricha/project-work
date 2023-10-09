@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   return (
-    <div className="text-dark-2 bg-light-1">
+    <div className="text-dark-2 bg-light-1 font-roboto">
 
     <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
 

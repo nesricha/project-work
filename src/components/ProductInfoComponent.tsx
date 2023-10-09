@@ -27,9 +27,18 @@ export default function ProductInfoComponent(prop: Prop) {
 
                 <div className="flex flex-wrap justify-center">
 
-                    {prop.product.images.map(image => <a className={`w-16 m-2 border border-2 border-light-3 p-0.5 rounded-md ${image === selectedImage && " border-4 scale-125"}`} href="#" onClick={() => setSelectedImage(image)}>
-                        <img src={image} alt={prop.product.title} key={image} className="h-full object-cover" />
-                    </a>)}
+                    {prop.product.images.map(image =>
+                        <div
+                            className={`w-16 m-2 border border-2 border-light-3 p-0.5 rounded-md hover:cursor-pointer ${image === selectedImage && " border-4 scale-125"}`}
+                            onClick={() => setSelectedImage(image)}>
+
+                            <img src={image}
+                                alt={prop.product.title}
+                                key={image}
+                                className="h-full object-cover" />
+
+                        </div>
+                    )}
 
                 </div>
 
@@ -45,7 +54,7 @@ export default function ProductInfoComponent(prop: Prop) {
 
                 <span className="text-lg px-1.5 line-through">{` ${oldPrice} $ `}</span>
 
-               
+
                 <p className="font-bold text-xl px-1.5 py-3 text-amber-700"> {` - ${prop.product.discountPercentage} % OFF`} </p>
 
                 <p className="font-bold text-xl py-2 pt-8">Description</p>

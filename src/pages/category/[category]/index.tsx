@@ -13,7 +13,7 @@ import ArrowTopComponent from "@/components/global/ArrowTopComponent"
 export default function CategoryPage() {
 
     const router = useRouter()
-    const productsCategory = router.query.category 
+    const productsCategory = router.query.category as string; // Use type assertion to ensure it's a string
 
     const [products, setProducts] = useState<Product[]>()
 
@@ -26,7 +26,7 @@ export default function CategoryPage() {
 
     
 
-    return <div className="text-dark-2 bg-light-1">
+    return <div className="text-dark-2 bg-light-1 font-roboto">
 
     <NavBarComponent />
 
