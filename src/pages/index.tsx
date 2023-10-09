@@ -8,6 +8,7 @@ import ContactFormComponent from '@/components/global/ContactFormComponent'
 import ProductListComponent from '@/components/ProductListComponent'
 import CategoryComponent from '@/components/global/CategoryComponent'
 import FooterComponent from '@/components/global/FooterComponent'
+import ArrowTopComponent from '@/components/global/ArrowTopComponent'
 // import styles from 'tailwindcss/tailwind.css';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,9 +28,11 @@ export default function Home() {
     <CategoryComponent />
 
     <ProductListComponent />
-    <ContactFormComponent />
+    <ContactFormComponent />    
 
     <FooterComponent />
+
+    <ArrowTopComponent />
 
     </div>
   )

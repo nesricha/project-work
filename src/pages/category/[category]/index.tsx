@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import styles from "../../../components/styles/Styles.module.css"
 import FooterComponent from "@/components/global/FooterComponent"
+import ArrowTopComponent from "@/components/global/ArrowTopComponent"
 
 export default function CategoryPage() {
 
@@ -33,7 +34,7 @@ export default function CategoryPage() {
 
     {products !== undefined && products.length ?  <div className="shadow-md">
 
-    <h2 className="font-semibold text-3xl md:text-4xl p-10">{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
+    <h2 className="font-semibold text-3xl md:text-4xl p-10" >{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
     
      <CategoryListComponent products={products} />
 
@@ -43,5 +44,7 @@ export default function CategoryPage() {
 
     <FooterComponent />
     
+    <ArrowTopComponent />
+
     </div>
 }

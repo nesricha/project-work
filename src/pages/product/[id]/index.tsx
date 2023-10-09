@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import styles from "../../../components/styles/Styles.module.css"
 import FooterComponent from "@/components/global/FooterComponent"
 import ContactFormComponent from "@/components/global/ContactFormComponent"
+import ArrowTopComponent from "@/components/global/ArrowTopComponent"
 
 export default function ProductPage() {
 
@@ -29,11 +30,13 @@ export default function ProductPage() {
 
     <NavBarComponent />
 
-    {product !== undefined ? <ProductInfoComponent product={product} /> : <p>Product not found</p>}
+    {product !== undefined ? <ProductInfoComponent product={product} /> : <p className="text-3xl text-center font-bold p-8">We're sorry, the product you're looking for is not available. </p>}
 
     <ContactFormComponent />
 
     <FooterComponent />
+
+    <ArrowTopComponent />
 
     </div>
 }
