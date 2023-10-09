@@ -10,7 +10,7 @@ export default function FooterComponent() {
                 <a href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank" className="hover:-translate-y-0.5 underline p-2">Privacy Policy</a>
                 <a href="https://en.wikipedia.org/wiki/Terms_of_service" target="_blank" className="hover:-translate-y-0.5 underline p-2">Terms of use</a>
                 <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" className="hover:-translate-y-0.5 underline p-2">Cookie Policy</a>
-                <a href="https://en.wikipedia.org/wiki/Accessibility" target="_blank" className="hover:-translate-y-0.5 underline p-2">Accesibility</a>
+                <a href="https://en.wikipedia.org/wiki/Accessibility" target="_blank" className="hover:-translate-y-0.5 underline p-2">Accessibility</a>
             </div>
 
         </div>
