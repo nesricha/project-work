@@ -27,7 +27,7 @@ export default function ProductInfoComponent(prop: Prop) {
 
                 <div className="flex flex-wrap justify-center">
 
-                    {prop.product.images.map(image => <a className={`w-16 m-2 border border-2 border-light-3 p-0.5 rounded-md ${image === selectedImage && " border-4"}`} href="#" onClick={() => setSelectedImage(image)}>
+                    {prop.product.images.map(image => <a className={`w-16 m-2 border border-2 border-light-3 p-0.5 rounded-md ${image === selectedImage && " border-4 scale-125"}`} href="#" onClick={() => setSelectedImage(image)}>
                         <img src={image} alt={prop.product.title} key={image} className="h-full object-cover" />
                     </a>)}
 
