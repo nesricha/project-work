@@ -19,7 +19,7 @@ export default function FooterComponent() {
 
             <p className="font-bold text-2xl leading-10">Contacts</p>
             <p className="leading-10">Email: <a href="mailto:customer.service@cybershop.it" className="p-1 hover:underline font-medium"> customer.service@cybershop.it</a></p>
-            <p className="leading-10">Phone: <a href="tel:+390257511565" className="p-1 hover:underline font-medium"> +39 02 5751 1565 </a></p>
+            <p className="leading-10">Phone: <a href="tel:+393455185187" className="p-1 hover:underline font-medium"> +39 345 518 5187 </a></p>
 
         </div>
     </div>
