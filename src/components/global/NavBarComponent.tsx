@@ -6,7 +6,7 @@ import { useEffect } from "react"
 export default function NavBarComponent() {
 
     return <div className="flex justify-between items-center p-4">
-        <a href="/" className="rounded-full w-14 md:w-20 overflow-hidden grow-0">
+        <a href="/" className="rounded-full hover:scale-105 w-16 shadow-md md:w-20 overflow-hidden grow-0">
             <img src="/logo.png" alt="logo" />
         </a>
 
