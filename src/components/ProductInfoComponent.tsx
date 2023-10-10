@@ -1,6 +1,4 @@
 import { useState } from "react"
-import NavBar from "./global/NavBarComponent"
-import styles from "./styles/Styles.module.css"
 import { ProductInfo } from "@/types/ProductInfo"
 
 type Prop = {
@@ -13,28 +11,28 @@ export default function ProductInfoComponent(prop: Prop) {
 
     const [selectedImage, setSelectedImage] = useState<string>(prop.product.images[0])
 
-    return <div className="p-10">
+    return <div className="p-3 md:p-10" key={prop.product.id}>
 
         <p>Category: <a href={`/category/${prop.product.category}`} className="underline hover:font-medium "> {prop.product.category.toUpperCase()}</a></p>
 
         <div className="p-10 flex flex-row flex-wrap ">
 
-            <div className="mx-auto p-3 md:w-6/12">
+            <div className="mx-auto p-3 lg:w-6/12">
 
-                <div className="h-[43vw] md:h-[25vw] vertical-middle overflow-hidden mx-auto my-4">
+                <div className="min-h-[250px] h-[38vw] lg:h-[25vw] vertical-middle overflow-hidden mx-auto my-4">
                     <img src={selectedImage} alt={prop.product.title} className="object-cover mx-auto max-h-full p-1 border border-2 border-light-3 rounded-md" />
                 </div>
 
                 <div className="flex flex-wrap justify-center">
 
-                    {prop.product.images.map(image =>
+                    {prop.product.images.map((image, index) =>
                         <div
                             className={`w-16 m-2 border border-2 border-light-3 p-0.5 rounded-md hover:cursor-pointer ${image === selectedImage && " border-4 scale-125"}`}
                             onClick={() => setSelectedImage(image)}>
 
                             <img src={image}
                                 alt={prop.product.title}
-                                key={image}
+                                key={`${prop.product.id}.${index}`}
                                 className="h-full object-cover" />
 
                         </div>
