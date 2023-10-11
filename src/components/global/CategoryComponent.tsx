@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import styles from "../styles/Styles.module.css"
 
 export default function CategoryComponent() {
 

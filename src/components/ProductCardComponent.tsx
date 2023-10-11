@@ -1,5 +1,4 @@
 import { Product } from "@/types/Product"
-import styles from "./styles/Styles.module.css"
 
 type Prop = {
     product: Product
@@ -9,12 +8,12 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
-    return <div className={`${styles.productCard} flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]`}>
+    return <div className="group transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
 
 
-        <a href={`/product/${prop.product.id}`} className={`${styles.cardImage} h-3/6 overflow-hidden`}>
+        <a href={`/product/${prop.product.id}`} className="group-hover:scale-110 transition duration-300 h-3/6 overflow-hidden">
 
-            <img className="mx-auto scale-125 max-h-44 object-contain" src={prop.product.thumbnail} alt={prop.product.title} />
+            <img className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain" src={prop.product.thumbnail} alt={prop.product.title} />
 
         </a>
 

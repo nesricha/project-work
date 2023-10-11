@@ -1,7 +1,4 @@
-import axios from "axios"
-import styles from "../styles/Styles.module.css"
 import { useEffect, useState } from "react"
-import { Product } from "@/types/Product"
 
 
 export default function NavBarComponent() {

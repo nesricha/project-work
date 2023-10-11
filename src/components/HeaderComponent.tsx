@@ -1,4 +1,3 @@
-import styles from "./styles/Styles.module.css"
 
 export default function HeaderComponent() {
 

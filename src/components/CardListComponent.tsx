@@ -1,6 +1,5 @@
 import { Product } from "@/types/Product"
 import ProductCardComponent from "./ProductCardComponent"
-import styles from "./styles/Styles.module.css"
 
 type Prop = {
     products: Product[]
