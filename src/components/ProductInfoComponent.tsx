@@ -19,7 +19,7 @@ export default function ProductInfoComponent(prop: Prop) {
 
             <div className="mx-auto p-3 lg:w-6/12">
 
-                <div className="min-h-[250px] h-[38vw] lg:h-[25vw] vertical-middle overflow-hidden mx-auto my-4">
+                <div className="min-h-[250px] h-[38vw] lg:h-[25vw] flex items-center overflow-hidden mx-auto my-4">
                     <img src={selectedImage} alt={prop.product.title} className="object-cover mx-auto max-h-full p-1 border border-2 border-light-3 rounded-md" />
                 </div>
 
@@ -42,7 +42,7 @@ export default function ProductInfoComponent(prop: Prop) {
 
             </div>
 
-            <div className="min-w-[40vw] p-3 md:w-6/12">
+            <div className="min-w-[40vw] p-3 lg:w-6/12">
 
                 <h2 className="font-bold text-3xl py-3">{prop.product.title}</h2>
 

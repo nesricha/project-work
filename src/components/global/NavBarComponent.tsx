@@ -72,9 +72,9 @@ export default function NavBarComponent() {
                         height="30"
                         fill="none"
                         stroke="currentcolor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2">
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2">
                         <path d="M6 6 L30 6 27 19 9 19 M27 23 L10 23 5 2 2 2" />
                         <circle cx="25" cy="27" r="2" />
                         <circle cx="12" cy="27" r="2" />
@@ -99,9 +99,9 @@ export default function NavBarComponent() {
                         height="30"
                         fill="none"
                         stroke="currentcolor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2">
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2">
                         <path d="M16 2 L20 12 30 12 22 19 25 30 16 23 7 30 10 19 2 12 12 12 Z" />
                     </svg>
                     {/* <svg id="i-heart" className="mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -113,11 +113,16 @@ export default function NavBarComponent() {
 
 
 
-        <form className="flex items-center"
+        <form 
+        id="csSearchForm"
+        className="flex items-center"
+        autoComplete="off"
             onSubmit={event => event.currentTarget.reset()}>
             <input
                 type="text"
                 placeholder="Search.."
+                id="searchInput"
+                autoComplete="off"
                 className="rounded-md outline-double outline-light-2 focus-visible:outline-double px-1 py-1.5 mx-1 md:mx-3"
                 onChange={event => setSearch(event.target.value)} />
 
@@ -142,9 +147,9 @@ export default function NavBarComponent() {
                     height="20"
                     fill="none"
                     stroke="currentcolor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2">
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2">
                     <circle cx="14" cy="14" r="12" />
                     <path d="M23 23 L30 30" />
                 </svg>

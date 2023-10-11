@@ -5,7 +5,6 @@ import { ProductInfo } from "@/types/ProductInfo"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import styles from "../../../components/styles/Styles.module.css"
 import FooterComponent from "@/components/global/FooterComponent"
 import ContactFormComponent from "@/components/global/ContactFormComponent"
 import ArrowTopComponent from "@/components/global/ArrowTopComponent"
@@ -26,7 +25,7 @@ export default function ProductPage() {
 
     
 
-    return <div className="text-dark-2 bg-light-1 font-roboto">
+    return <div className="text-dark-2 bg-light-1 font-raleway">
 
     <NavBarComponent />
 

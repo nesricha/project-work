@@ -6,7 +6,6 @@ import { Product } from "@/types/Product"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import styles from "../../../components/styles/Styles.module.css"
 import FooterComponent from "@/components/global/FooterComponent"
 import ArrowTopComponent from "@/components/global/ArrowTopComponent"
 
@@ -26,7 +25,7 @@ export default function CategoryPage() {
 
     
 
-    return <div className="text-dark-2 bg-light-1 font-roboto">
+    return <div className="text-dark-2 bg-light-1 font-raleway">
 
     <NavBarComponent />
 

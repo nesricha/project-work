@@ -31,6 +31,8 @@ export default function ContactFormComponent() {
         <h2 className="text-center font-bold text-light-1 text-3xl md:text-4xl py-3 md:py-5">CONTACT US</h2>
 
         <form
+        id="csForm"
+        autoComplete="off"
             className="max-w-md mx-auto"
             onSubmit={event => {
                 event.preventDefault()
@@ -45,6 +47,7 @@ export default function ContactFormComponent() {
                     className="w-full p-2 rounded-md focus-visible:outline-light-2 focus-visible:outline-light-2"
                     type="text"
                     id="name"
+                    autoComplete="off"
                     placeholder=" Enter your name"
                     onChange={event => setName(event.target.value)}
                     required />
@@ -59,6 +62,7 @@ export default function ContactFormComponent() {
                     className="w-full p-2 rounded-md focus-visible:outline-light-2"
                     type="text"
                     id="lastName"
+                    autoComplete="off"
                     placeholder=" Enter your last name"
                     onChange={event => setLastName(event.target.value)}
                     required />
@@ -73,6 +77,7 @@ export default function ContactFormComponent() {
                     className="w-full p-2 rounded-md focus-visible:outline-light-2"
                     type="email"
                     id="email"
+                    autoComplete="off"
                     placeholder=" Enter your email"
                     onChange={event => setEmail(event.target.value)}
                     required />

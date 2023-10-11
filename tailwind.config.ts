@@ -24,7 +24,7 @@ const config: Config = {
         'light-4': '#ceba9b',
       },
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif']
+        'raleway': ['Raleway', 'sans-serif']
       },
     },
   },
