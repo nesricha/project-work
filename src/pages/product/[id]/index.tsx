@@ -1,5 +1,4 @@
 import NavBarComponent from "@/components/global/NavBarComponent"
-import ProductCardComponent from "@/components/ProductCardComponent"
 import ProductInfoComponent from "@/components/ProductInfoComponent"
 import { ProductInfo } from "@/types/ProductInfo"
 import axios from "axios"

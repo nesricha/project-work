@@ -34,6 +34,7 @@ export default function ContactFormComponent() {
             onSubmit={event => {
                 event.preventDefault()
                 event.currentTarget.reset()
+                alert(` SUBMITTED DATA \n \nName: ${name?.toUpperCase()};\nLast name: ${lastName?.toUpperCase()};\nEmail: ${email}`)
             }}>
 
 
