@@ -23,7 +23,7 @@ export default function ContactFormComponent() {
     }, [name, lastName, email])
 
 
-    return <div id="contact" className="bg-gradient-to-b from-dark-1 to-light-1 py-24 px-10 shadow-md">
+    return <div id="contact" className="bg-gradient-to-b from-dark-1 to-light-1 py-16 sm:py-24 px-10 shadow-md">
 
         <h2 className="text-center font-bold text-light-1 text-3xl md:text-4xl py-3 md:py-5">CONTACT US</h2>
 

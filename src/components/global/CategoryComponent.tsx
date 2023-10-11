@@ -13,7 +13,7 @@ export default function CategoryComponent() {
     }, [])
 
 
-    return <div className="text-center shadow-md bg-gradient-to-b from-dark-1 to-light-1 py-24 px-10">
+    return <div className="text-center shadow-md bg-gradient-to-b from-dark-1 to-light-1 py-16 sm:py-24 px-10">
 
 <h1 className="font-bold text-light-1 text-4xl md:text-5xl py-3 md:py-5">CATEGORIES</h1>
 

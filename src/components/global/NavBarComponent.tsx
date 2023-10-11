@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 export default function NavBarComponent() {
@@ -51,11 +51,11 @@ export default function NavBarComponent() {
 
                     <svg
                         id="i-cart"
-                        className="mx-2"
+                        className="mx-1.5 p-[1px]"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 32 32"
-                        width="30"
-                        height="30"
+                        width="27"
+                        height="27"
                         fill="none"
                         stroke="currentcolor"
                         strokeLinecap="round"
@@ -78,11 +78,11 @@ export default function NavBarComponent() {
                     }}>
                     <svg
                         id="i-star"
-                        className="mx-2"
+                        className="mx-1.5 p-[1px]"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 32 32"
-                        width="30"
-                        height="30"
+                        width="27"
+                        height="27"
                         fill="none"
                         stroke="currentcolor"
                         strokeLinecap="round"
@@ -103,8 +103,7 @@ export default function NavBarComponent() {
         id="csSearchForm"
         className="flex items-center"
         autoComplete="off"
-        action={`/search/${search}`}
-            onSubmit={event => event.currentTarget.reset()}>
+        action={`/search/${search}`}>
             <input
                 type="text"
                 placeholder="Search.."
@@ -120,7 +119,7 @@ export default function NavBarComponent() {
             {/* small screen */}
 
             <button type="submit"
-                className="flex md:hidden py-2 px-3 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold">
+                className="flex md:hidden py-2 px-1.5 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold">
 
                 <svg
                     id="i-search"

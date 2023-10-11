@@ -18,7 +18,7 @@ export default function SearchResultComponent() {
     useEffect(() => {
         if (searchQuery !== undefined)
         axios.get(`https://dummyjson.com/products/search?q=${searchQuery.toLowerCase()}`)
-            .then(res => setProducts(res.data.products))
+            .then(res => setProducts(res.data.products.filter((product:Product) => product.title.toLowerCase().includes(searchQuery.toLowerCase()))))
             .catch(err => console.log(err));
     }, [searchQuery])
 
