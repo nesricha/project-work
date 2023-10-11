@@ -6,7 +6,7 @@ type Prop = {
     products: Product[]
 }
 
-export default function CategoryListComponent(props: Prop) {
+export default function CardListComponent(props: Prop) {
 
 
     return <>

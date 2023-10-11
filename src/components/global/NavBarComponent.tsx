@@ -6,19 +6,8 @@ import { Product } from "@/types/Product"
 
 export default function NavBarComponent() {
 
-    const [products, setProducts] = useState<Product[]>()
     const [search, setSearch] = useState<string>()
-    const [query, setQuery] = useState<boolean>(false)
 
-    useEffect(() => {
-        search?.length && setQuery(true)
-    }, [search])
-
-    useEffect(() => {
-        axios.get('https://dummyjson.com/products')
-            .then(res => setProducts(res.data.products))
-            .catch(err => console.log(err))
-    }, [query])
 
     return <div className="flex justify-between items-center p-4">
 
@@ -117,6 +106,7 @@ export default function NavBarComponent() {
         id="csSearchForm"
         className="flex items-center"
         autoComplete="off"
+        action={`/search/${search}`}
             onSubmit={event => event.currentTarget.reset()}>
             <input
                 type="text"
@@ -127,17 +117,13 @@ export default function NavBarComponent() {
                 onChange={event => setSearch(event.target.value)} />
 
             <button type="submit"
-                className="hidden md:flex py-1.5 px-8 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold"
-                onClick={() => search?.length && console.log(products?.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
-                    .map(product => product.title))}>Search</button>
+                className="hidden md:flex py-1.5 px-8 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold">Search</button>
 
 
             {/* small screen */}
 
             <button type="submit"
-                className="flex md:hidden py-2 px-3 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold"
-                onClick={() => search?.length && console.log(products?.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
-                    .map(product => product.title))}>
+                className="flex md:hidden py-2 px-3 border border-dark-2 hover:bg-light-2 hover:border-light-2 rounded-md font-semibold">
 
                 <svg
                     id="i-search"

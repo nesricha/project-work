@@ -1,5 +1,5 @@
 import CategoryComponent from "@/components/global/CategoryComponent"
-import CategoryListComponent from "@/components/CategoryListComponent"
+import CardListComponent from "@/components/CardListComponent"
 import ContactFormComponent from "@/components/global/ContactFormComponent"
 import NavBarComponent from "@/components/global/NavBarComponent"
 import { Product } from "@/types/Product"
@@ -18,7 +18,7 @@ export default function CategoryPage() {
 
     useEffect(() => {
         if (productsCategory !== undefined)
-        axios.get(`https://dummyjson.com/products/category/${productsCategory}`)
+        axios.get(`https://dummyjson.com/products/category/${productsCategory.toLowerCase()}`)
         .then(res => setProducts(res.data.products))
         .catch(err => console.log(err))
     }, [productsCategory])
@@ -35,7 +35,7 @@ export default function CategoryPage() {
 
     <h2 className="font-semibold text-3xl md:text-4xl p-10" >{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
     
-     <CategoryListComponent products={products} />
+     <CardListComponent products={products} />
 
      </div>  : <p className="text-3xl text-center font-bold p-8">{`No products available for the category "${productsCategory?.toLowerCase()}"`}</p>}
     
