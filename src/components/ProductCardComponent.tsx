@@ -22,11 +22,11 @@ export default function ProductCardComponent(prop: Prop) {
 
             <a href={`/product/${prop.product.id}`}>
 
-                <h5 className="text-amber-900 font-semibold text-md">{prop.product.title.toUpperCase()}</h5>
+                <h5 className="text-yellow-900 font-semibold text-md">{prop.product.title.toUpperCase()}</h5>
                 <p className="">{prop.product.brand}</p>
                 <span className="font-semibold leading-7 text-lg"> {prop.product.price}$ </span>
                 <span className="line-through leading-7">  {`${oldPrice}$`}</span>
-                <p className="font-medium text-amber-900">{` - ${prop.product.discountPercentage}% OFF`}</p>
+                <p className="font-medium text-yellow-900">{` - ${prop.product.discountPercentage}% OFF`}</p>
                 
                 <p>{prop.product.rating} /5</p>
 
@@ -34,13 +34,13 @@ export default function ProductCardComponent(prop: Prop) {
 
             <div className="flex justify-around py-3">
 
-                <a href="#" className="text-amber-900 font-semibold hover:scale-x-[1.05] hover:underline"
+                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] hover:underline"
                     onClick={event => {
                         event.preventDefault()
                         alert(`You added "${prop.product.title.toUpperCase()}" to your wishlist!`)
                     }}>+ Favorites</a>
 
-                <a href="#" className="text-amber-900 font-semibold hover:scale-x-[1.05] hover:underline"
+                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] hover:underline"
                     onClick={event => {
                         event.preventDefault()
                         alert(`You added "${prop.product.title.toUpperCase()}" to your cart!`)

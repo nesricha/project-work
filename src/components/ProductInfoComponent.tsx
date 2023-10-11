@@ -42,9 +42,9 @@ export default function ProductInfoComponent(prop: Prop) {
 
             </div>
 
-            <div className="min-w-[40vw] p-3 lg:w-6/12">
+            <div className="min-w-[40vw] p-3 lg:w-6/12 mx-auto">
 
-                <h2 className="font-bold text-3xl py-3 text-amber-900">{prop.product.title}</h2>
+                <h2 className="font-bold text-3xl py-3 text-yellow-900">{prop.product.title}</h2>
 
                 <h3 className="text-xl pb-5">{prop.product.brand}</h3>
 
@@ -53,7 +53,7 @@ export default function ProductInfoComponent(prop: Prop) {
                 <span className="text-lg px-1.5 line-through">{` ${oldPrice} $ `}</span>
 
 
-                <p className="font-bold text-xl px-1.5 py-3 text-amber-900"> {` - ${prop.product.discountPercentage} % OFF`} </p>
+                <p className="font-bold text-xl px-1.5 py-3 text-yellow-900"> {` - ${prop.product.discountPercentage} % OFF`} </p>
 
                 <p className="font-bold text-xl py-2 pt-8">Description</p>
                 <p>{prop.product.description}</p>
@@ -65,15 +65,15 @@ export default function ProductInfoComponent(prop: Prop) {
                     Stock: <span className="text-lg px-1.5 font-normal">{prop.product.stock}</span>
                 </p>
 
-                <div className="flex items-center pt-8">
+                <div className="flex flex-wrap whitespace-nowrap justify-center items-center pt-8">
 
-                    <a href="#" className="m-1 text-amber-900 hover:text-light-1 hover:bg-amber-900 font-semibold border border-1 rounded-lg border-amber-900 transition duration-150 hover:scale-[1.05] p-2"
+                    <a href="#" className="m-1 text-center w-[90%] text-yellow-900 hover:text-light-1 hover:bg-yellow-900 font-semibold border border-1 rounded-lg border-yellow-900 transition duration-150 hover:scale-[1.05] p-2"
                         onClick={event => {
                             event.preventDefault()
                             alert(`You added "${prop.product.title.toUpperCase()}" to your wishlist!`)
                         }}>Add to Favorites</a>
 
-                    <a href="#" className="m-1 text-amber-900 hover:text-light-1 hover:bg-amber-900 font-semibold border border-1 rounded-lg border-amber-900 transition duration-150 hover:scale-[1.05] p-2"
+                    <a href="#" className="m-1 text-center w-[90%] text-yellow-900 hover:text-light-1 hover:bg-yellow-900 font-semibold border border-1 rounded-lg border-yellow-900 transition duration-150 hover:scale-[1.05] p-2"
                         onClick={event => {
                             event.preventDefault()
                             alert(`You added "${prop.product.title.toUpperCase()}" to your cart!`)
