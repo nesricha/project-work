@@ -1,4 +1,6 @@
 import { Product } from "@/types/Product"
+import { useFavoritesContext } from "./contexts/FavoritesContext"
+import { useEffect, useState } from "react"
 
 type Prop = {
     product: Product
@@ -8,6 +10,36 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
+
+    // Accedi al contesto dei preferiti utilizzando il hook useFavoritesContext
+    const favoritesContext = useFavoritesContext();
+
+    if (!favoritesContext) {
+        console.log('favorites context undefined');
+        return null;
+    }
+
+    const { favorites, setFavorites } = favoritesContext;
+
+    // Funzione per aggiungere un prodotto ai preferiti
+    const addToFavs = (product: Product) => {
+        const updatedFavorites = [...favorites, product];
+        setFavorites(updatedFavorites);
+    }
+
+    // Utilizza uno stato locale per memorizzare i preferiti unici
+    const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
+
+    useEffect(() => {
+        // Calcola i preferiti unici
+        const uniqueFavoritesSet = new Set(favorites);
+        const uniqueFavoritesArray = Array.from(uniqueFavoritesSet);
+        setUniqueFavorites(uniqueFavoritesArray);
+        
+        console.log(uniqueFavoritesArray);
+    }, [favorites]);
+
+    
     return <div className="group transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
 
 
@@ -38,6 +70,7 @@ export default function ProductCardComponent(prop: Prop) {
                     onClick={event => {
                         event.preventDefault()
                         alert(`You added "${prop.product.title.toUpperCase()}" to your wishlist!`)
+                        addToFavs(prop.product)
                     }}>+ Favorites</a>
 
                 <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] underline sm:no-underline hover:underline"
