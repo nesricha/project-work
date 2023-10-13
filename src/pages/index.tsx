@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Product } from '@/types/Product'
 import CardListComponent from '@/components/CardListComponent'
+import { FavoritesProvider } from '@/components/contexts/FavoritesContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,39 +19,43 @@ export default function Home() {
 
   useEffect(() => {
     axios.get('https://dummyjson.com/products')
-    .then(res => setProducts(res.data.products))
-    .catch(err => console.log(err))
-}, [])
+      .then(res => setProducts(res.data.products))
+      .catch(err => console.log(err))
+  }, [])
 
   return (
-    <div className="text-dark-2 bg-light-1 font-raleway">
+    <FavoritesProvider>
 
-    <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
+      <div className="text-dark-2 bg-light-1 font-raleway">
 
-    <NavBarComponent />
-    <HeaderComponent />
+        <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
+
+          <NavBarComponent />
+          <HeaderComponent />
+
+        </div>
+
+        <CategoryComponent />
+
+        {products !== undefined && products.length ? <div className="shadow-md">
+
+          <h2 className="font-semibold text-3xl md:text-4xl p-10" >Today's deals</h2>
+
+          <CardListComponent products={products?.filter(product => product.discountPercentage > 15.8)} />
+
+        </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again tomorrow</p>
+
+        }
+
+
+        <ContactFormComponent />
+
+        <FooterComponent />
+
+        <ArrowTopComponent />
 
       </div>
-    
-    <CategoryComponent />
 
-    {products !== undefined && products.length ? <div className="shadow-md">
-
-      <h2 className="font-semibold text-3xl md:text-4xl p-10" >Today's deals</h2>
-
-      <CardListComponent products={products?.filter(product=> product.discountPercentage > 15.8)} />
-
-      </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again tomorrow</p>
-
-       }
-
-
-    <ContactFormComponent />    
-
-    <FooterComponent />
-
-    <ArrowTopComponent />
-
-    </div>
+    </FavoritesProvider>
   )
 }
