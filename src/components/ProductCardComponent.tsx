@@ -34,13 +34,13 @@ export default function ProductCardComponent(prop: Prop) {
 
             <div className="flex justify-around py-3">
 
-                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] hover:underline"
+                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] underline sm:no-underline hover:underline"
                     onClick={event => {
                         event.preventDefault()
                         alert(`You added "${prop.product.title.toUpperCase()}" to your wishlist!`)
                     }}>+ Favorites</a>
 
-                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] hover:underline"
+                <a href="#" className="text-yellow-900 font-semibold hover:scale-x-[1.05] underline sm:no-underline hover:underline"
                     onClick={event => {
                         event.preventDefault()
                         alert(`You added "${prop.product.title.toUpperCase()}" to your cart!`)
