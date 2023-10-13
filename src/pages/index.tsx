@@ -23,39 +23,37 @@ export default function Home() {
       .catch(err => console.log(err))
   }, [])
 
-  return (
-    <FavoritesProvider>
+  return (<FavoritesProvider>
 
-      <div className="text-dark-2 bg-light-1 font-raleway">
+    <div className="text-dark-2 bg-light-1 font-raleway">
 
-        <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
+      <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
 
-          <NavBarComponent />
-          <HeaderComponent />
-
-        </div>
-
-        <CategoryComponent />
-
-        {products !== undefined && products.length ? <div className="shadow-md">
-
-          <h2 className="font-semibold text-3xl md:text-4xl p-10" >Today's deals</h2>
-
-          <CardListComponent products={products?.filter(product => product.discountPercentage > 15.8)} />
-
-        </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again tomorrow</p>
-
-        }
-
-
-        <ContactFormComponent />
-
-        <FooterComponent />
-
-        <ArrowTopComponent />
+        <NavBarComponent />
+        <HeaderComponent />
 
       </div>
 
-    </FavoritesProvider>
-  )
+      <CategoryComponent />
+
+      {products !== undefined && products.length ? <div className="shadow-md">
+
+        <h2 className="font-semibold text-3xl md:text-4xl p-10" >Today's deals</h2>
+
+        <CardListComponent products={products?.filter(product => product.discountPercentage > 15.8)} />
+
+      </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again tomorrow</p>
+
+      }
+
+
+      <ContactFormComponent />
+
+      <FooterComponent />
+
+      <ArrowTopComponent />
+
+    </div>
+
+  </FavoritesProvider>)
 }

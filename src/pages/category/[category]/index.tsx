@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import FooterComponent from "@/components/global/FooterComponent"
 import ArrowTopComponent from "@/components/global/ArrowTopComponent"
+import { FavoritesProvider } from "@/components/contexts/FavoritesContext"
 
 export default function CategoryPage() {
 
@@ -18,32 +19,36 @@ export default function CategoryPage() {
 
     useEffect(() => {
         if (productsCategory !== undefined)
-        axios.get(`https://dummyjson.com/products/category/${productsCategory.toLowerCase()}`)
-        .then(res => setProducts(res.data.products))
-        .catch(err => console.log(err))
+            axios.get(`https://dummyjson.com/products/category/${productsCategory.toLowerCase()}`)
+                .then(res => setProducts(res.data.products))
+                .catch(err => console.log(err))
     }, [productsCategory])
 
-    
 
-    return <div className="text-dark-2 bg-light-1 font-raleway">
 
-    <NavBarComponent />
+    return (<FavoritesProvider>
 
-    <CategoryComponent />
+        <div className="text-dark-2 bg-light-1 font-raleway">
 
-    {products !== undefined && products.length ?  <div className="shadow-md">
+            <NavBarComponent />
 
-    <h2 className="font-semibold text-3xl md:text-4xl p-10" >{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
-    
-     <CardListComponent products={products} />
+            <CategoryComponent />
 
-     </div>  : <p className="text-3xl text-center font-bold p-8">{`No products available for the category "${productsCategory?.toLowerCase()}"`}</p>}
-    
-    <ContactFormComponent />
+            {products !== undefined && products.length ? <div className="shadow-md">
 
-    <FooterComponent />
-    
-    <ArrowTopComponent />
+                <h2 className="font-semibold text-3xl md:text-4xl p-10" >{`Category: ${productsCategory?.replace("-", " ").toUpperCase()}`}</h2>
 
-    </div>
+                <CardListComponent products={products} />
+
+            </div> : <p className="text-3xl text-center font-bold p-8">{`No products available for the category "${productsCategory?.toLowerCase()}"`}</p>}
+
+            <ContactFormComponent />
+
+            <FooterComponent />
+
+            <ArrowTopComponent />
+
+        </div>
+
+    </FavoritesProvider>)
 }

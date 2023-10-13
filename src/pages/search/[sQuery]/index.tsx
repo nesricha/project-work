@@ -1,4 +1,5 @@
 import CardListComponent from "@/components/CardListComponent";
+import { FavoritesProvider } from "@/components/contexts/FavoritesContext";
 import ArrowTopComponent from "@/components/global/ArrowTopComponent";
 import CategoryComponent from "@/components/global/CategoryComponent";
 import ContactFormComponent from "@/components/global/ContactFormComponent";
@@ -17,30 +18,34 @@ export default function SearchResultComponent() {
 
     useEffect(() => {
         if (searchQuery !== undefined)
-        axios.get(`https://dummyjson.com/products/search?q=${searchQuery.toLowerCase()}`)
-            .then(res => setProducts(res.data.products.filter((product:Product) => product.title.toLowerCase().includes(searchQuery.toLowerCase()))))
-            .catch(err => console.log(err));
+            axios.get(`https://dummyjson.com/products/search?q=${searchQuery.toLowerCase()}`)
+                .then(res => setProducts(res.data.products.filter((product: Product) => product.title.toLowerCase().includes(searchQuery.toLowerCase()))))
+                .catch(err => console.log(err));
     }, [searchQuery])
 
-    return <div className="text-dark-2 bg-light-1 font-raleway">
+    return (<FavoritesProvider>
 
-    <NavBarComponent />
+        <div className="text-dark-2 bg-light-1 font-raleway">
 
-    <CategoryComponent />
+            <NavBarComponent />
 
-    {products !== undefined && products.length ?  <div className="shadow-md">
+            <CategoryComponent />
 
-    <h2 className="font-semibold text-3xl md:text-4xl p-10" >{` Results for '${searchQuery.toUpperCase()}' `}</h2>
-    
-     <CardListComponent products={products} />
+            {products !== undefined && products.length ? <div className="shadow-md">
 
-     </div>  : <p className="text-3xl text-center font-bold p-8">{` No products were found for '${searchQuery?.toLowerCase()}' `}</p>}
-    
-    <ContactFormComponent />
+                <h2 className="font-semibold text-3xl md:text-4xl p-10" >{` Results for '${searchQuery.toUpperCase()}' `}</h2>
 
-    <FooterComponent />
-    
-    <ArrowTopComponent />
+                <CardListComponent products={products} />
 
-    </div>
+            </div> : <p className="text-3xl text-center font-bold p-8">{` No products were found for '${searchQuery?.toLowerCase()}' `}</p>}
+
+            <ContactFormComponent />
+
+            <FooterComponent />
+
+            <ArrowTopComponent />
+
+        </div>
+
+    </FavoritesProvider>)
 }
