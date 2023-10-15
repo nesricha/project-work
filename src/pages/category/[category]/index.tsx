@@ -26,9 +26,7 @@ export default function CategoryPage() {
 
 
 
-    return (<FavoritesProvider>
-
-        <div className="text-dark-2 bg-light-1 font-raleway">
+    return <div className="text-dark-2 bg-light-1 font-raleway">
 
             <NavBarComponent />
 
@@ -49,6 +47,4 @@ export default function CategoryPage() {
             <ArrowTopComponent />
 
         </div>
-
-    </FavoritesProvider>)
 }

@@ -19,33 +19,43 @@ export default function ProductCardComponent(prop: Prop) {
         return null;
     }
 
-    const { favorites, setFavorites } = favoritesContext;
+    const { favorites, addToFavs } = favoritesContext;
 
     // Funzione per aggiungere un prodotto ai preferiti
-    const addToFavs = (product: Product) => {
-        const updatedFavorites = [...favorites, product];
-        setFavorites(updatedFavorites);
-    }
-
-    // Utilizza uno stato locale per memorizzare i preferiti unici
-    const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
+    // const addToFavs = (product: Product) => {
+    //     // const updatedFavorites = [...favorites, product];
+    //     setFavorites(favorites => [...favorites, product]);
+    // }
 
     useEffect(() => {
-        // Calcola i preferiti unici
-        const uniqueFavoritesSet = new Set(favorites);
-        const uniqueFavoritesArray = Array.from(uniqueFavoritesSet);
-        setUniqueFavorites(uniqueFavoritesArray);
-        
-        console.log(uniqueFavoritesArray);
-    }, [favorites]);
+        console.log(favorites)
+    }, [favorites])
 
-    
-    return <div className="group transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
+    // // Utilizza uno stato locale per memorizzare i preferiti unici
+    // const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
+
+    // useEffect(() => {
+    //     // Calcola i preferiti unici
+    //     const uniqueFavoritesSet = new Set(favorites);
+    //     const uniqueFavoritesArray = Array.from(uniqueFavoritesSet);
+    //     setUniqueFavorites(uniqueFavoritesArray);
+
+    //     console.log(uniqueFavoritesArray);
+    // }, [favorites]);
+
+    const [fallBackImg, setFallBackImg] = useState<string>(prop.product.thumbnail)
+
+
+    return (<div className="group transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
 
 
         <a href={`/product/${prop.product.id}`} className="group-hover:scale-110 transition duration-300 h-3/6 overflow-hidden">
 
-            <img className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain" src={prop.product.thumbnail} alt={prop.product.title} />
+            <img 
+            className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain" 
+            src={fallBackImg !== undefined ? fallBackImg : `/Image_not_available.png`}
+            onError={() => setFallBackImg("/Image_not_available.png")}
+            alt={prop.product.title} />
 
         </a>
 
@@ -59,7 +69,7 @@ export default function ProductCardComponent(prop: Prop) {
                 <span className="font-semibold leading-7 text-lg"> {prop.product.price}$ </span>
                 <span className="line-through leading-7">  {`${oldPrice}$`}</span>
                 <p className="font-medium text-yellow-900">{` - ${prop.product.discountPercentage}% OFF`}</p>
-                
+
                 <p>{prop.product.rating} /5</p>
 
             </a>
@@ -83,7 +93,5 @@ export default function ProductCardComponent(prop: Prop) {
 
         </div>
 
-
-
-    </div>
+    </div>)
 }

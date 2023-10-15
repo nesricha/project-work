@@ -23,9 +23,7 @@ export default function SearchResultComponent() {
                 .catch(err => console.log(err));
     }, [searchQuery])
 
-    return (<FavoritesProvider>
-
-        <div className="text-dark-2 bg-light-1 font-raleway">
+    return <div className="text-dark-2 bg-light-1 font-raleway">
 
             <NavBarComponent />
 
@@ -46,6 +44,4 @@ export default function SearchResultComponent() {
             <ArrowTopComponent />
 
         </div>
-
-    </FavoritesProvider>)
 }

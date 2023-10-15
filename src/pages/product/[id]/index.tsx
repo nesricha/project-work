@@ -25,9 +25,7 @@ export default function ProductPage() {
 
 
 
-    return (<FavoritesProvider>
-
-        <div className="text-dark-2 bg-light-1 font-raleway">
+    return <div className="text-dark-2 bg-light-1 font-raleway">
 
             <NavBarComponent />
 
@@ -40,6 +38,4 @@ export default function ProductPage() {
             <ArrowTopComponent />
 
         </div>
-
-    </FavoritesProvider>)
 }
