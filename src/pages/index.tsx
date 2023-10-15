@@ -23,9 +23,7 @@ export default function Home() {
       .catch(err => console.log(err))
   }, [])
 
-  return (<FavoritesProvider>
-
-    <div className="text-dark-2 bg-light-1 font-raleway">
+  return <div className="text-dark-2 bg-light-1 font-raleway">
 
       <div className="bg-[url('/wall.jpg')] bg-full bg-cover md:bg-contain min-h-[400px] md:h-[68vh]">
 
@@ -54,6 +52,4 @@ export default function Home() {
       <ArrowTopComponent />
 
     </div>
-
-  </FavoritesProvider>)
 }

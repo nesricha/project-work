@@ -10,8 +10,6 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
-
-    // Accedi al contesto dei preferiti utilizzando il hook useFavoritesContext
     const favoritesContext = useFavoritesContext();
 
     if (!favoritesContext) {
@@ -21,32 +19,14 @@ export default function ProductCardComponent(prop: Prop) {
 
     const { favorites, addToFavs } = favoritesContext;
 
-    // Funzione per aggiungere un prodotto ai preferiti
-    // const addToFavs = (product: Product) => {
-    //     // const updatedFavorites = [...favorites, product];
-    //     setFavorites(favorites => [...favorites, product]);
-    // }
-
     useEffect(() => {
         console.log(favorites)
     }, [favorites])
 
-    // // Utilizza uno stato locale per memorizzare i preferiti unici
-    // const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
-
-    // useEffect(() => {
-    //     // Calcola i preferiti unici
-    //     const uniqueFavoritesSet = new Set(favorites);
-    //     const uniqueFavoritesArray = Array.from(uniqueFavoritesSet);
-    //     setUniqueFavorites(uniqueFavoritesArray);
-
-    //     console.log(uniqueFavoritesArray);
-    // }, [favorites]);
-
     const [fallBackImg, setFallBackImg] = useState<string>(prop.product.thumbnail)
 
 
-    return (<div className="group transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
+    return (<div className="group max-h-fit transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
 
 
         <a href={`/product/${prop.product.id}`} className="group-hover:scale-110 transition duration-300 h-3/6 overflow-hidden">
@@ -59,7 +39,7 @@ export default function ProductCardComponent(prop: Prop) {
 
         </a>
 
-        <div className="h-3/6 py-5 px-4">
+        <div className="h-auto py-5 px-4">
 
 
             <a href={`/product/${prop.product.id}`}>
