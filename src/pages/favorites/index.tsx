@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 
 export default function FavoritesPage() {
 
-    const favoritesContext = useFavoritesContext()
+    const { favorites } = useFavoritesContext()
 
-    if (!favoritesContext) {
+    if (!favorites) {
 
         return (<div className="text-dark-2 bg-light-1 font-raleway">
 
@@ -28,9 +28,6 @@ export default function FavoritesPage() {
         </div>)
     }
 
-
-
-    const { favorites, addToFavs } = favoritesContext
 
     const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
 

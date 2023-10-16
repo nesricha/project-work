@@ -10,14 +10,14 @@ export default function ProductCardComponent(prop: Prop) {
 
     let oldPrice = Math.ceil(prop.product.price * 100 / (100 - prop.product.discountPercentage))
 
-    const favoritesContext = useFavoritesContext();
+    const { favorites, addToFavs } = useFavoritesContext();
 
-    if (!favoritesContext) {
+    if (!{ favorites, addToFavs }) {
         console.log('favorites context undefined');
         return null;
     }
 
-    const { favorites, addToFavs } = favoritesContext;
+    
 
     useEffect(() => {
         console.log(favorites)
