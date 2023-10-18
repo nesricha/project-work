@@ -1,6 +1,7 @@
 import { Product } from "@/types/Product";
 import { useEffect, useState } from "react";
 import { FavoritesActionType, useFavorites } from "./contexts/FavoritesContext";
+import ImageComponent from "./global/ImageComponent";
 
 type Prop = {
   product: Product;
@@ -32,13 +33,19 @@ export default function ProductCardComponent(prop: Prop) {
         href={`/product/${prop.product.id}`}
         className="group-hover:scale-110 transition duration-300 h-3/6 overflow-hidden"
       >
-        <img
+        {/* <img
           className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain"
           src={
             fallBackImg !== undefined ? fallBackImg : `/Image_not_available.png`
           }
           onError={() => setFallBackImg("/Image_not_available.png")}
           alt={prop.product.title}
+        /> */}
+
+        <ImageComponent
+          src={prop.product.thumbnail}
+          alt={prop.product.title}
+          className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain"
         />
       </a>
 

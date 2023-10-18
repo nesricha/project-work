@@ -1,14 +1,11 @@
 import localStorage from "localstorage-slim";
 import { Product } from "@/types/Product";
-// se non compare usecontext nei suggerimenti scrivilo a mano ma non usare usehtmlcontext
-// quando importi createcontext assicurati ceh sia importato da react e non vm
 import {
   ReactNode,
   createContext,
   useContext,
   useEffect,
   useReducer,
-  useState,
 } from "react";
 
 export interface FavoritesState {
@@ -30,10 +27,7 @@ type FavoritesAction =
 
 const LOCAL_STORAGE_KEY = "favorites-key";
 
-const favoriteReducer = (
-  state: FavoritesState,
-  action: FavoritesAction
-): FavoritesState => {
+const favoriteReducer = (state: FavoritesState, action: FavoritesAction): FavoritesState => {
   switch (action.type) {
     case FavoritesActionType.FETCH:
       localStorage.set(
@@ -42,10 +36,7 @@ const favoriteReducer = (
       );
       return { ...state, ...action.payload };
     case FavoritesActionType.ADD_FAVORITES:
-      //   !state.favorites.includes(action.payload.favorite) ? state.favorites = [...state.favorites, action.payload.favorite] : state.favorites
-      state.favorites = [...state.favorites, action.payload.favorite];
-      const uniqueFavoritesSet = new Set([...state.favorites]);
-      state.favorites = Array.from(uniqueFavoritesSet);
+      state.favorites = Array.from(new Set([...state.favorites, action.payload.favorite]));
       localStorage.set(LOCAL_STORAGE_KEY, JSON.stringify(state));
     default:
       return state;

@@ -31,15 +31,6 @@ export default function FavoritesPage() {
     );
   }
 
-//   const [uniqueFavorites, setUniqueFavorites] = useState<Product[]>([]);
-
-//   useEffect(() => {
-//     const uniqueFavoritesSet = new Set([...state.favorites]);
-//     const uniqueFavoritesArray = Array.from(uniqueFavoritesSet);
-//     setUniqueFavorites(uniqueFavoritesArray);
-
-//     console.log(uniqueFavoritesArray);
-//   }, [state]);
 
   return (
     <div className="text-dark-2 bg-light-1 font-raleway">
