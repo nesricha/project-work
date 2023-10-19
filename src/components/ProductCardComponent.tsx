@@ -1,5 +1,4 @@
 import { Product } from "@/types/Product";
-import { useEffect, useState } from "react";
 import { FavoritesActionType, useFavorites } from "./contexts/FavoritesContext";
 import ImageComponent from "./global/ImageComponent";
 
@@ -12,20 +11,24 @@ export default function ProductCardComponent(prop: Prop) {
     (prop.product.price * 100) / (100 - prop.product.discountPercentage)
   );
 
+  // richiamo usefavorites per usare il context creato, dichiarando come costante i valori che avevo assegnato al provider
+  // dichiaro i valori che mi servono, in questo caso entrambi, ma nel caso me ne servisse solo uno dichiaro solo quello
   const { state, dispatch } = useFavorites();
 
+  // questo if l'ho messo per gestire il comportamento del componente in caso di context undefined, che però non dovrebbe mai 
+  // succedere (in teoria) perchè io gli ho assegnato un stato iniziale diverso da undefined
   if (!{ state, dispatch }) {
     console.log("favorites context undefined");
     return null;
   }
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+  // useEffect(() => {
+  //   console.log(state);
+  // }, [state]);
 
-  const [fallBackImg, setFallBackImg] = useState<string>(
-    prop.product.thumbnail
-  );
+  // const [fallBackImg, setFallBackImg] = useState<string>(
+  //   prop.product.thumbnail
+  // );
 
   return (
     <div className="group max-h-fit transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
