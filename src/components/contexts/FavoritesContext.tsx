@@ -63,7 +63,7 @@ const favoriteReducer = (
       return { ...state, ...action.payload }; //questo è lo stato che mi restituisce la FETCH
     case FavoritesActionType.ADD_FAVORITES: //secondo caso: azione di tipo ADD_FAVORITES
       state.favorites = Array.from( //il metodo from mi restiurà un array dal new set, che uso per non avere duplicati 
-        new Set([...state.favorites, action.payload.favorite]) // dentro alle quadre, nel new set, ho 2 valori: il primo è l'array attuale,  
+        new Set([...[...state.favorites, action.payload.favorite]]) // dentro alle quadre, nel new set, ho 2 valori: il primo è l'array attuale,  
       );                                                       // il secondo è il dato che voglio aggiungere all'array, come se facessi un push
       localStorage.set(LOCAL_STORAGE_KEY, JSON.stringify(state)); //qui aggiorno lo stato nel local storage, passandogli la key
     default:                                                     //(ovvero il valore che voglio aggiornare) e il nuovo stato
