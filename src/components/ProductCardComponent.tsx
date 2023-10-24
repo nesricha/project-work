@@ -59,7 +59,7 @@ export default function ProductCardComponent(prop: Prop) {
   };
 
   const handleClickCart = () => {
-    if (!stateCart.cart.filter((prod) => prod.id === prop.product.id)) {
+    if (!stateCart.cart.filter((prod) => prod.id === prop.product.id).length) {
       setTextCart("-");
       alert(`You added "${prop.product.title}" to you cart!`);
       dispatchCart({
