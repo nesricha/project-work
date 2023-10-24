@@ -44,7 +44,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
     case CartActionType.REMOVE_CART:
       state.cart = Array.from(
         new Set([
-          ...state.cart.filter((prod) => prod !== action.payload.product),
+          ...state.cart.filter((prod) => prod.id !== action.payload.product.id),
         ])
       );
       localStorage.set(LOCAL_STORAGE_KEY, JSON.stringify(state));

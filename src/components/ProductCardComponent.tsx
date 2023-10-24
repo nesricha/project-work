@@ -39,7 +39,9 @@ export default function ProductCardComponent(prop: Prop) {
   }, []);
 
   const handleClickFav = () => {
-    if (!stateFav.favorites.includes(prop.product)) {
+    if (
+      !stateFav.favorites.filter((prod) => prod.id === prop.product.id).length
+    ) {
       setTextFav("-");
       alert(`You added ${prop.product.title} to your wishlist!`);
       dispatchFav({
@@ -57,7 +59,7 @@ export default function ProductCardComponent(prop: Prop) {
   };
 
   const handleClickCart = () => {
-    if (!stateCart.cart.includes(prop.product)) {
+    if (!stateCart.cart.filter((prod) => prod.id === prop.product.id)) {
       setTextCart("-");
       alert(`You added "${prop.product.title}" to you cart!`);
       dispatchCart({

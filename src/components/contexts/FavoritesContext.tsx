@@ -52,7 +52,7 @@ const favoriteReducer = (
       return state;
     case FavoritesActionType.REMOVE_FAVORITES:
       state.favorites = state.favorites.filter(
-        (prod) => prod !== action.payload.favorite
+        (prod) => prod.id !== action.payload.favorite.id
       );
       localStorage.set(LOCAL_STORAGE_KEY, JSON.stringify(state));
       return state;
