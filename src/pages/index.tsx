@@ -40,7 +40,7 @@ export default function Home() {
 
         <CardListComponent products={products?.filter(product => product.discountPercentage > 15.8)} />
 
-      </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again tomorrow</p>
+      </div> : <p className="text-3xl text-center font-bold p-8">We're sorry, there are no special discounts at the moment. We invite you to try again later.</p>
 
       }
 

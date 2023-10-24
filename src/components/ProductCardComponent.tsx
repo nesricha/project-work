@@ -1,6 +1,8 @@
 import { Product } from "@/types/Product";
 import { FavoritesActionType, useFavorites } from "./contexts/FavoritesContext";
 import ImageComponent from "./global/ImageComponent";
+import { CartActionType, useCart } from "./contexts/CartContext";
+import { useEffect, useState } from "react";
 
 type Prop = {
   product: Product;
@@ -11,24 +13,66 @@ export default function ProductCardComponent(prop: Prop) {
     (prop.product.price * 100) / (100 - prop.product.discountPercentage)
   );
 
-  // richiamo usefavorites per usare il context creato, dichiarando come costante i valori che avevo assegnato al provider
-  // dichiaro i valori che mi servono, in questo caso entrambi, ma nel caso me ne servisse solo uno dichiaro solo quello
-  const { state, dispatch } = useFavorites();
+  const { stateFav, dispatchFav } = useFavorites();
+  const { stateCart, dispatchCart } = useCart();
 
-  // questo if l'ho messo per gestire il comportamento del componente in caso di context undefined, che però non dovrebbe mai 
-  // succedere (in teoria) perchè io gli ho assegnato un stato iniziale diverso da undefined
-  if (!{ state, dispatch }) {
+  if (!{ stateFav, dispatchFav }) {
     console.log("favorites context undefined");
     return null;
   }
 
-  // useEffect(() => {
-  //   console.log(state);
-  // }, [state]);
+  if (!{ stateCart, dispatchCart }) {
+    console.log("cart context undefined");
+    return null;
+  }
 
-  // const [fallBackImg, setFallBackImg] = useState<string>(
-  //   prop.product.thumbnail
-  // );
+  const [textFav, setTextFav] = useState<string>();
+  const [textCart, setTextCart] = useState<string>();
+
+  useEffect(() => {
+    stateFav.favorites.filter((prod) => prod.id === prop.product.id).length
+      ? setTextFav("-")
+      : setTextFav("+");
+    stateCart.cart.filter((prod) => prod.id === prop.product.id).length
+      ? setTextCart("-")
+      : setTextCart("+");
+  }, []);
+
+  const handleClickFav = () => {
+    if (!stateFav.favorites.includes(prop.product)) {
+      setTextFav("-");
+      alert(`You added ${prop.product.title} to your wishlist!`);
+      dispatchFav({
+        type: FavoritesActionType.ADD_FAVORITES,
+        payload: { favorite: prop.product },
+      });
+    } else {
+      setTextFav("+");
+      alert(`You removed ${prop.product.title} from your wishlist!`);
+      dispatchFav({
+        type: FavoritesActionType.REMOVE_FAVORITES,
+        payload: { favorite: prop.product },
+      });
+    }
+  };
+
+  const handleClickCart = () => {
+    if (!stateCart.cart.includes(prop.product)) {
+      setTextCart("-");
+      alert(`You added "${prop.product.title}" to you cart!`);
+      dispatchCart({
+        type: CartActionType.ADD_CART,
+        payload: { product: prop.product },
+      });
+    } else {
+      setTextCart("+");
+      alert(`You removed "${prop.product.title}" from your cart!`);
+      dispatchCart({
+        type: CartActionType.REMOVE_CART,
+        payload: { product: prop.product },
+      });
+    }
+  };
 
   return (
     <div className="group max-h-fit transition duration-300 flex flex-col h-full shadow-md md:hover:shadow-xl rounded-xl overflow-hidden bg-white hover:bg-gradient-to-t hover:from-light-1 md:hover:scale-105 mx-auto md:max-w-[300px]">
@@ -36,15 +80,6 @@ export default function ProductCardComponent(prop: Prop) {
         href={`/product/${prop.product.id}`}
         className="group-hover:scale-110 transition duration-300 h-3/6 overflow-hidden"
       >
-        {/* <img
-          className="transition duration-300 group-hover:scale-105 mx-auto scale-125 max-h-44 object-contain"
-          src={
-            fallBackImg !== undefined ? fallBackImg : `/Image_not_available.png`
-          }
-          onError={() => setFallBackImg("/Image_not_available.png")}
-          alt={prop.product.title}
-        /> */}
-
         <ImageComponent
           src={prop.product.thumbnail}
           alt={prop.product.title}
@@ -74,16 +109,10 @@ export default function ProductCardComponent(prop: Prop) {
             className="text-yellow-900 font-semibold hover:scale-x-[1.05] underline sm:no-underline hover:underline"
             onClick={(event) => {
               event.preventDefault();
-              alert(
-                `You added "${prop.product.title.toUpperCase()}" to your wishlist!`
-              );
-              dispatch({
-                type: FavoritesActionType.ADD_FAVORITES,
-                payload: { favorite: prop.product },
-              });
+              handleClickFav();
             }}
           >
-            + Favorites
+            {`${textFav} Favorites`}
           </a>
 
           <a
@@ -91,12 +120,10 @@ export default function ProductCardComponent(prop: Prop) {
             className="text-yellow-900 font-semibold hover:scale-x-[1.05] underline sm:no-underline hover:underline"
             onClick={(event) => {
               event.preventDefault();
-              alert(
-                `You added "${prop.product.title.toUpperCase()}" to your cart!`
-              );
+              handleClickCart();
             }}
           >
-            + Cart
+            {`${textCart} Cart`}
           </a>
         </div>
       </div>

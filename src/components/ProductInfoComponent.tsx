@@ -15,8 +15,6 @@ export default function ProductInfoComponent(prop: Prop) {
     prop.product.images[0]
   );
 
-  // const [fallBackImg, setFallBackImg] = useState<string>()
-
   return (
     <div className="p-3 md:p-10">
       <p>
@@ -33,11 +31,6 @@ export default function ProductInfoComponent(prop: Prop) {
       <div className="p-10 flex flex-row flex-wrap ">
         <div className="mx-auto p-3 lg:w-6/12">
           <div className="min-h-[250px] h-[38vw] lg:h-[25vw] flex items-center overflow-hidden mx-auto my-4">
-            {/* <img
-                        src={selectedImage !== undefined ? selectedImage : `/Image_not_available.png`}
-                        // onError={() => setFallBackImg("/Image_not_available.png")}
-                        alt={prop.product.title}
-                        className="object-cover mx-auto max-h-full p-1 border border-2 border-light-3 rounded-md" /> */}
             <ImageComponent
               src={selectedImage}
               alt={prop.product.title}
@@ -54,13 +47,6 @@ export default function ProductInfoComponent(prop: Prop) {
                 key={`${prop.product.id}.${index}`}
                 onClick={() => setSelectedImage(image)}
               >
-                {/* <img
-                  src={image !== undefined ? image : `/Image_not_available.png`}
-                  // onError={() => setFallBackImg('/Image_not_available.png')}
-                  alt={prop.product.title}
-                  className="h-full object-cover mx-auto"
-                /> */}
-
                 <ImageComponent
                   src={image}
                   alt={prop.product.title}

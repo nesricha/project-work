@@ -21,11 +21,7 @@ export default function NavBarComponent() {
 
             <li>
                 <a className="text-xl font-semibold py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1"
-                    href="#"
-                    onClick={event => {
-                        event.preventDefault()
-                        alert("Work in progress")
-                    }} >Cart</a></li>
+                    href="/cart">Cart</a></li>
 
             <li>
                 <a className="text-xl font-semibold py-2 px-3 hover:rounded-md hover:bg-gradient-to-t hover:from-light-1"
@@ -54,9 +50,6 @@ export default function NavBarComponent() {
                         strokeWidth="2">
                         <path d="M16 2 L20 12 30 12 22 19 25 30 16 23 7 30 10 19 2 12 12 12 Z" />
                     </svg>
-                    {/* <svg id="i-heart" className="mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    <path d="M4 16 C1 12 2 6 7 4 12 2 15 6 16 8 17 6 21 2 26 4 31 6 31 12 28 16 25 20 16 28 16 28 16 28 7 20 4 16 Z" />
-                    </svg> */}
                 </a>
             </li>
 
@@ -64,11 +57,7 @@ export default function NavBarComponent() {
 
             <li>
                 <a className="py-2"
-                    href="#"
-                    onClick={event => {
-                        event.preventDefault()
-                        alert("Work in progress")
-                    }}>
+                    href="/cart">
 
                     <svg
                         id="i-cart"
