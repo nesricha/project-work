@@ -41,9 +41,8 @@ export default function ProductInfoComponent(prop: Prop) {
           <div className="flex flex-wrap justify-center">
             {prop.product.images.map((image, index) => (
               <div
-                className={`transition duration-300 w-16 max-h-[65px] m-2 border border-2 border-light-3 p-0.5 rounded-md hover:cursor-pointer ${
-                  image === selectedImage && " border-4 scale-125"
-                }`}
+                className={`transition duration-300 w-16 max-h-[65px] m-2 border border-2 border-light-3 p-0.5 rounded-md hover:cursor-pointer ${image === selectedImage && " border-4 scale-125"
+                  }`}
                 key={`${prop.product.id}.${index}`}
                 onClick={() => setSelectedImage(image)}
               >

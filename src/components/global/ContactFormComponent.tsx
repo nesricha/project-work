@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-// import Datepicker from "react-tailwindcss-datepicker"
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
 
 export default function ContactFormComponent() {
-  // const [startDate, setStartDate] = useState(new Date());
 
   const [name, setName] = useState<string>();
   const [lastName, setLastName] = useState<string>();
@@ -82,18 +78,6 @@ export default function ContactFormComponent() {
             required
           />
         </div>
-
-        {/* DA SISTEMARE 
-
-            <div className="w-11/12 mx-auto pb-3">
-
-                <label className="block p-1" htmlFor="date">Date of birth: </label>
-                <div className="w-full rounde-md overflow-hidden flex justify-stretch items-stretch justify-items-stretch">
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="w-[95vw] rounded-md p-2 overflow-hidden focus-visible:outline-light-2" />
-
-                </div>
-
-            </div> */}
 
         <div className="w-11/12 mx-auto pb-3">
           <label className="block p-1" htmlFor="education">
